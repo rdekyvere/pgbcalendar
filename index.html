@@ -38,10 +38,10 @@
             </div>
             <div>
             <h1>
-                <button onclick="openCalendar()">open calendar</button><br/><br/>
+               <p> <button onclick="openCalendar()">open Rik calendar</button><br/><br/></p>
                
                
-                <button onclick="createCalendarEvent()">create event</button><br/><br/>
+              <p>  <button onclick="createCalendarEvent()">create Rik event</button><br/><br/></p>
               
                
               </h1>  
@@ -60,15 +60,7 @@
   var endDate = new Date(2015,6,15,19,30,0,0,0);
   var calendarName = "MyCal";
 
-  // clean up the dates a bit
-  startDate.setMinutes(0);
-  endDate.setMinutes(0);
-  startDate.setSeconds(0);
-  endDate.setSeconds(0);
 
-  // add a few hours to the dates, JS will automatically update the date (+1 day) if necessary
-  startDate.setHours(startDate.getHours() + 2);
-  endDate.setHours(endDate.getHours() + 3);
 
   function onSuccess(msg) {
     alert('Calendar success: ' + JSON.stringify(msg));
