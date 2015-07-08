@@ -56,8 +56,8 @@
   var title = 'My Event Title';
   var loc = 'My Event Location';
   var notes = 'My interesting Event notes.';
-  var startDate = new Date();
-  var endDate = new Date();
+   var startDate = new Date(2015,6,15,18,30,0,0,0); // beware: month 0 = january, 11 = december
+  var endDate = new Date(2015,6,15,19,30,0,0,0);
   var calendarName = "MyCal";
 
   // clean up the dates a bit
@@ -80,33 +80,23 @@
 
   function openCalendar() {
     // today + 3 days
-    var d = new Date(new Date().getTime() + 7*24*60*60*1000);
+    var d = new Date(new Date().getTime() + 3*24*60*60*1000);
     window.plugins.calendar.openCalendar(d, onSuccess, onError);
   }
 
-  function listCalendars() {
-    window.plugins.calendar.listCalendars(onSuccess, onError);
-  }
+  
 
   function createCalendar() {
     window.plugins.calendar.createCalendar(calendarName, onSuccess, onError);
   }
 
-  function deleteEvent() {
-    window.plugins.calendar.deleteEvent(title, loc, notes, startDate, endDate, onSuccess, onError);
-  }
+  
 
   function createCalendarEvent() {
     window.plugins.calendar.createEvent(title, loc, notes, startDate, endDate, onSuccess, onError);
   }
 
-  function findEventWithFilter() {
-    window.plugins.calendar.findEvent(title, loc, notes, startDate, endDate, onSuccess, onError);
-  }
-
-  function findEventNoFilter() {
-    window.plugins.calendar.findEvent(null, null, null, startDate, endDate, onSuccess, onError);
-  }
+  
 
   window.onerror = function(msg, file, line) {
     alert(msg + '; ' + file + '; ' + line);
